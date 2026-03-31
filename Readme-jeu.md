@@ -30,9 +30,17 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
+
 ## 4. Lancer le back
 
 ```Bash
-pip install --upgrade pip
-pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+## 5. Lancer le front
+
+```Bash
+cd react-front
+npm install
+npm run dev
 ```
