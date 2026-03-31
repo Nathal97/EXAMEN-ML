@@ -1,4 +1,4 @@
-#  AI.py
+#  AI.py (dans la brache master)
 > **Examen Final Master 1 - Machine Learning**
 
 **Institut Supérieur Polytechnique de Madagascar**
