@@ -106,7 +106,7 @@ L'objectif est d'utiliser le résultat théorique du morpion en jeu parfait pour
 ---
 
 ##  Vidéo de présentation
-[Demo du projet](https://drive.google.com/file/d/ID_DE_LA_VIDEO/view?usp=sharing)
+[Demo du projet](https://drive.google.com/drive/folders/12GT2UrrOTa_C55xWIq-8i_gwx-jDBsPP?usp=drive_link)
 
 
 ##  Livrables fournis
