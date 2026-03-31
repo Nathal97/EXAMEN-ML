@@ -44,6 +44,18 @@ class NoeudMorpion:
                 return self.etat[v[0]] * 100
         return 0
 
+    def get_win_indices(self):
+        """Retourne la liste des indices gagnants, ex: [0, 1, 2]"""
+        victoires = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ]
+        for v in victoires:
+            if self.etat[v[0]] == self.etat[v[1]] == self.etat[v[2]] != self.VIDE:
+                return v
+        return []
+    
     def is_terminal(self):
         return self.eval_heuristique() != 0 or self.VIDE not in self.etat
 
@@ -89,6 +101,7 @@ def minimax(noeud, prof, alpha, beta, joueur_max):
 # --- GÉNÉRATEUR DE DATASET ---
 
 def generer_dataset():
+    
     dataset = {}
     depart = NoeudMorpion()
     
@@ -136,5 +149,54 @@ def generer_dataset():
     df.to_csv('back/csv/dataset.csv', index=False)
     print(f"Succès ! {len(df)} états enregistrés dans back/csv/dataset.csv")
 
+def jouer():
+    jeu = NoeudMorpion()
+    print("=== TEST IA MINIMAX (Profondeur 9) ===")
+    print("Légende des positions :")
+    print("|0|1|2|\n|3|4|5|\n|6|7|8|\n")
+    print("Tu es X (1), l'IA est O (-1).")
+
+    while not jeu.is_terminal():
+        print("\nPlateau actuel :")
+        print(jeu)
+
+        if jeu.tour == NoeudMorpion.X:
+            # Tour de l'humain (Nathalie)
+            try:
+                choix = int(input("Choisis une case (0-8) : "))
+                if 0 <= choix <= 8 and jeu.etat[choix] == NoeudMorpion.VIDE:
+                    jeu = jeu.play(choix)
+                else:
+                    print("Case invalide ou déjà occupée !")
+            except ValueError:
+                print("Entrée invalide ! Tape un chiffre entre 0 et 8.")
+        else:
+            # Tour de l'IA
+            print("L'IA réfléchit...")
+            # On cherche à maximiser pour l'IA (ici on passe -1 car c'est le tour de O)
+            # Pour simplifier le test, on utilise l'algorithme minimax existant
+            minimax(jeu, 9, -float('inf'), float('inf'), 1)
+            if jeu.best:
+                jeu = jeu.best
+                print(f"L'IA a joué en position.")
+            else:
+                # Sécurité si aucun coup n'est trouvé
+                for i in range(9):
+                    if jeu.etat[i] == NoeudMorpion.VIDE:
+                        jeu = jeu.play(i)
+                        break
+
+    print("\n=== FIN DE PARTIE ===")
+    print(jeu)
+    score_final = jeu.eval_heuristique()
+    if score_final > 0:
+        print("Bravo, tu as gagné !")
+    elif score_final < 0:
+        print("L'IA a gagné !")
+    else:
+        print("Match nul !")
+
 if __name__ == "__main__":
-    generer_dataset()
+    jouer()
+# if __name__ == "__main__":
+#     generer_dataset()
