@@ -95,21 +95,21 @@ L'objectif est d'utiliser le résultat théorique du morpion en jeu parfait pour
 - Métrique privilégiée : F1-score (et AUC) car le déséquilibre est important pour éviter un modèle qui prédit toujours la classe majoritaire.
 
 ### Q3 — Comparaison des deux modèles
+- Le classificateur pour x_wins obtient de meilleurs scores (Accuracy et F1-score) que celui pour is_draw.
 - `x_wins` est généralement plus facile à apprendre que `is_draw` car la notion de victoire est plus structurée.
 - `is_draw` est plus difficile (moins linéaire), avec plus d'importance sur interactions complexes.
 
-### Q4 — Interface et démo
-- Mode 1 : `Human vs Human` (contrôles clavier / clics)
-- Mode 2 : `Human vs IA (ML)` (coup via prédiction XGBoost)
-- Mode 3 : `Human vs IA (Hybride)` (Minimax profondeur 3 + score ML)
+### Q4 — Mode Hybride
+- On peut observer que le mode IA-ML est moins performant par rapport au mode Hybride.
+- Le mode Hybride évite effectivement mieux les pièges.
+- Le mode IA-ML ne regarde que l’état courant et évalue chaque coup possible par une prédiction instantanée et ne peut donc pas prevoir les enchainements de coups.
+- Le mode hybride  combine une recherche Minimax avec les modèles ML.
 
 ---
 
 ##  Vidéo de présentation
 <!-- - Lien : <video src="video.gif" width="600" controls></video> -->
 
-
----****
 
 ##  Livrables fournis
 1. `back/exam.ipynb` + script générateur Minimax (`Minimax/Noeud.py`)
