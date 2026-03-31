@@ -1,0 +1,92 @@
+.AllScreen {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.playerCase {
+  /* position: relative; */
+  width: 75%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#gameContainer {
+  display: grid;
+  background-color: #0d001a;
+  height: 450px;
+  width: 450px;
+  border: solid 2px #9d00ff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px #9d00ff80;
+  background-size: 50px 50px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap : 2px;
+}
+
+.playerIntro {
+  width: 200px;
+  height: 100px;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.case {
+  border: solid 1px #9d00ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userCircle {
+  width: 50%;
+  height: 50%;
+  border: solid 3px #ff3131;
+  border-radius : 50%;
+  box-shadow: inset 0 0 10px #ff3131,
+    0 0 10px #ff3131,
+    0 0 20px #ff3131;
+}
+
+.userX {
+  position: relative;
+  display: flex;
+  width: 50%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.userX::before,
+.userX::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #00acfb;
+  box-shadow: inset 0 0 10px #00acfb,
+    0 0 10px #00acfb,
+    0 0 20px #00acfb;
+}
+
+.userX::before {
+  transform: rotate(45deg);
+}
+
+.userX::after {
+  transform: rotate(-45deg);
+}
+
+.mode-btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  margin: 0 10px;
+}
