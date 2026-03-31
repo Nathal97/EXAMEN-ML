@@ -9,15 +9,14 @@ Site officiel : http://www.ispm-edu.com/
 ##  Projet et équipe
 - **Nom du groupe :** AI.PY
 - **Membres :**
-  - RAZAFIMANANTSOA Nathalie Malalasoa Kantoniaina
-  - [Nom Prénom 2]
-  - [Nom Prénom 3]
-  - [Nom Prénom 4]
-  - [Nom Prénom 5]
-  - [Nom Prénom 6]
-  - [Nom Prénom 7]
+  -[06] RAZAFIMANANTSOA Nathalie Malalasoa Kantoniaina
+  -[07] ANDRIAMANARIVO Tahiana Miora
+  -[08] RATSIMISETRA Hasiniaina
+  -[11] RAZANADRAKOTO Noël Patrick
+  -[12] RAMIARANJAKAHARIMANANA Mendrika Harinjato
+  -[13] RATSIMAHOLINANDRASANA Antsa Nifaliana
 
-- **Filière :** ISAIA (Informatique Statistiques Appliquées et Intelligence Artificielle)
+- **Filière :** ISAIA 4 (Informatique Statistiques Appliquées et Intelligence Artificielle) 
 - **Date de rendu :** 31 mars 2026
 
 ---
@@ -75,7 +74,6 @@ L'objectif est d'utiliser le résultat théorique du morpion en jeu parfait pour
   - Meilleures métriques après tuning, + robustes sur classes déséquilibrées.
 - Minimax hybride : profondeur 3 + modèle ML comme fonction d'évaluation.
 
-> Remplacer les `0.XX` par valeurs réelles après exécution du notebook.
 
 ---
 
@@ -108,7 +106,7 @@ L'objectif est d'utiliser le résultat théorique du morpion en jeu parfait pour
 ---
 
 ##  Vidéo de présentation
-<!-- - Lien : <video src="video.gif" width="600" controls></video> -->
+[Demo du projet](https://drive.google.com/file/d/ID_DE_LA_VIDEO/view?usp=sharing)
 
 
 ##  Livrables fournis
@@ -116,13 +114,7 @@ L'objectif est d'utiliser le résultat théorique du morpion en jeu parfait pour
 2. `back/csv/dataset.csv`
 3. `back/exam.ipynb` (EDA + ML)
 4. `react-front/` interface 3 modes
-5. Vidéo de présentation (lien ci-dessus)
+5. Vidéo de présentation
 6. `README.md` (ce fichier)
 
 ---
-
-##  Notes finales
-- Dernier commit horaire respecté : 16h30
-- Ce README est conçu selon la consigne “rapport structuré” du sujet.
-- Les sections métriques peuvent être complétées après validation des tests unitaires et exécution du notebook.
-
